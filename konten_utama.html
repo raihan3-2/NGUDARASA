@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!--baxicons link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>konten</title>
+    <style>
+        @import url('css/style2.css');
+        @import url('css/konten_utama.css');
+    </style>
+
+    <script>
+        function replyToMessage(message) {
+            var replyMessage = prompt("Balas pesan ini:", "");
+            if (replyMessage !== null && replyMessage !== "") {
+                console.log("Membalas pesan:", message);
+                console.log("Balasan:", replyMessage);
+            } else {
+                console.log("Batal membalas pesan.");
+            }
+        }
+
+        function postText() {
+            var label = document.getElementById("feelingLabel");
+            var text = label.innerText.trim();
+            if (text !== "Bagaimana perasaan anda hari ini?" && text !== "") {
+                var postedTextElement = document.createElement("div");
+                postedTextElement.classList.add("posted-text");
+                postedTextElement.innerText = text;
+                var deleteButton = document.createElement("button");
+                deleteButton.classList.add("delete-btn");
+                deleteButton.innerText = "Hapus";
+                deleteButton.onclick = function () {
+                    deleteMessage(postedTextElement);
+                };
+                postedTextElement.appendChild(deleteButton);
+
+                document.querySelector(".main-middle-fill").appendChild(postedTextElement);
+                label.innerText = "Bagaimana perasaan anda hari ini?";
+            } else if (label.contentEditable === "true") {
+                alert("Anda belum menyelesaikan mengubah teks!");
+            } else {
+                alert("Teks tidak boleh kosong!");
+            }
+        }
+
+        function deleteMessage(element) {
+            if (confirm("Apakah Anda yakin ingin menghapus pesan ini?")) {
+                element.remove();
+                alert("Pesan berhasil dihapus!");
+            }
+        }
+
+        function editFeeling() {
+            var label = document.getElementById("feelingLabel");
+            if (label.innerText === "Bagaimana perasaan anda hari ini?") {
+                label.innerText = "";
+            }
+            label.contentEditable = true;
+            label.classList.add("editing");
+            label.focus();
+        }
+
+        function stopEditing() {
+            var label = document.getElementById("feelingLabel");
+            label.contentEditable = false;
+            label.classList.remove("editing");
+            if (label.innerText.trim() === "") {
+                label.innerText = "Bagaimana perasaan anda hari ini?";
+            }
+        }
+
+        document.addEventListener("click", function (event) {
+            var feelingLabel = document.getElementById("feelingLabel");
+            var clickedElement = event.target;
+
+            if (clickedElement.id !== "feelingLabel" && feelingLabel.contentEditable === "true") {
+                if (feelingLabel.innerText.trim() === "") {
+                    feelingLabel.innerText = "Bagaimana perasaan anda hari ini?";
+                    feelingLabel.contentEditable = false;
+                    feelingLabel.classList.remove("editing");
+                }
+            }
+        });
+
+
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            let newUser = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            let user_records = JSON.parse(localStorage.getItem("users")) || [];
+
+            user_records.push(newUser);
+
+            localStorage.setItem("users", JSON.stringify(user_records));
+        }
+
+
+        window.onload = function () {
+            let users = JSON.parse(localStorage.getItem("users"));
+
+            if (users && users.length > 0) {
+                let lastUser = users[users.length - 1]; 
+                let name = lastUser.name; 
+                document.getElementById("usernameDisplay").innerText = "Hello, " + name;
+            } else {
+                document.getElementById("usernameDisplay").innerText = "Hello, guest";
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+    <div class="main flex-row">
+        <div class="main-left">
+            <div class="main-logo flex-row">
+                <img width="240" src="image/ngudarasa.png" alt="">
+            </div>
+
+            <ul>
+                <li class="flex-row">
+                    <a href="index2.html"><i class='bx bxs-home'></i></a>
+                    <span class="link-style" onclick="goToHome()">Beranda</span>
+                </li>
+                <li class="flex-row">
+                    <a href=""><i class='bx bx-search'></i></a>
+                    <span>Cari</span>
+                </li>
+                <li class="flex-row">
+                    <a href="kontak.html"><i class='bx bxs-phone'></i></a>
+                    <span onclick="location.href='kontak.html'">Hubungi Kami</span>
+                </li>
+                <li class="flex-row">
+                    <a href="catatan.html"><i class='bx bx-notepad'></i></a>
+                    <span onclick="location.href='catatan.html'">Catatan</span>
+                </li>
+            </ul>
+
+            <div class="profile-button flex-row">
+                <div class="user-info">
+                    <h2 class="user-name" id="usernameDisplay"></h2>
+                    <p class="user-email">user@example.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-middle">
+            <div class="main-middle-fill">
+                <div class="main-middle-top">
+                    <h3 id="feelingLabel" class="editable" onclick="editFeeling()">Bagaimana perasaan anda hari ini?
+                    </h3>
+                    <i class='bx bxs-sticker'></i>
+                </div>
+
+                <hr>
+
+                <div class="main-middle-bottom">
+                    <i class='bx bx-low-vision'></i>
+                    <h4>Siapa yang bisa melihat?</h4>
+                    <button class="pst-btn" onclick="postText()">Post</button>
+                </div>
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="main-right">
+            <div class="testimonial">
+                <img width="80" src="image/cw.jpg" alt="User Photo" class="testimonial-img">
+                <p class="testimonial-text">"This website is amazing! It has changed my life for the better."</p>
+                <p class="testimonial-author">- John Doe</p>
+            </div>
+            <div class="testimonial">
+                <img width="80" src="image/cwok.jpg" alt="User Photo" class="testimonial-img">
+                <p class="testimonial-text">"I love using this site every day. Highly recommend to everyone!"</p>
+                <p class="testimonial-author">- Jane Smith</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

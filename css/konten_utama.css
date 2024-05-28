@@ -1,0 +1,272 @@
+.main {
+    align-items: flex-start;
+}
+
+.main-left {
+    width: 350px;
+    height: 863px;
+
+    background-color: rgb(77, 76, 76);
+}
+
+
+
+.main-logo {
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.main-left li {
+    width: 363px;
+    height: 58px;
+    margin-top: 15px;
+    margin-left: 11px;
+    margin-right: auto;
+}
+
+.main-left li i {
+    font-size: 40px;
+    color: rgb(177, 175, 175);
+}
+
+.main-left li span {
+    margin-right: auto;
+    margin-left: 10px;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(49, 206, 206);
+    cursor: pointer;
+}
+
+.profile-button {
+    background-color: rgb(49, 206, 206);
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 160px;
+    margin-top: 290px;
+    margin-bottom: auto;
+    margin-left: 80px;
+}
+
+.profile-button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-name {
+    font-size: 20px;
+    margin: 0;
+}
+
+.user-email {
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+.main-middle {
+    width: 813px;
+    height: 800px;
+
+    background-color: whitesmoke;
+
+    margin-left: auto;
+}
+
+.main-middle-top h3 {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(159, 158, 158);
+    margin-right: 20px;
+}
+
+.main-middle hr {
+    margin-right: 110px;
+    margin-left: 42px;
+}
+
+.main-middle-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.main-middle-top i {
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: 10px;
+    color: rgb(159, 158, 158);
+    cursor: pointer;
+}
+
+.main-middle-top i:hover {
+    color: rgb(176, 175, 175);
+}
+
+.main-middle-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.main-middle-bottom i {
+    margin-right: 8px;
+    font-size: 20px;
+    color: rgb(56, 55, 55);
+}
+
+.main-middle-bottom h4 {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.pst-btn {
+    background-color: #23ecec;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    margin-left: auto;
+    margin-right: 40px;
+
+}
+
+.pst-btn:hover {
+background-color: #00cccc;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+transform: translateY(-2px);
+}
+
+.main-middle-bottom hr {
+    width: 100px;
+}
+
+.hr {
+    margin-right: 110px;
+    margin-left: 42px;
+    border: 1px solid rgb(64, 63, 63);
+}
+
+.main-right {
+    width: 460px;
+    height: 800px;
+    background-color: rgb(77, 76, 76);
+}
+
+.main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.testimonial-img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+    color: rgb(49, 206, 206);
+    font-weight: bold;
+}
+    
+.posted-text {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+#feelingLabel {
+    cursor: pointer;
+    transition: none;
+}
+
+#feelingLabel:hover {
+    cursor: pointer;
+}
+
+.editable {
+    user-select: none;
+}
+
+.editing {
+    user-select: text;
+}
+
+.reply-btn, .delete-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+.editing {
+    user-select: text;
+    outline: none;
+    border: none;
+    padding: 0;
+    background-color: transparent; 
+}
+
+
+

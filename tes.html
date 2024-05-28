@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!--baxicons link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>konten</title>
+    <style>
+        @import url('css/style2.css');
+        @import url('css/konten_utama.css');
+    </style>
+    <script>
+        function goToHome() {
+            window.location.href = 'index2.html';
+        }
+
+        function postFeeling() {
+            var feeling = document.getElementById("feelingInput").value;
+            document.getElementById("feelingOutput").innerText = feeling;
+        }
+    </script>
+</head>
+<body>
+    <div class="main flex-row">
+        <div class="main-left">
+            <!-- Bagian Kiri -->
+            <!-- ... -->
+        </div>
+        <div class="main-middle">
+            <div class="main-middle-fill">
+                <div class="main-middle-top">
+                    <!-- Ubah menjadi input -->
+                    <input type="text" id="feelingInput" placeholder="Bagaimana perasaan anda hari ini?">
+                    <!-- ... -->
+                </div>
+                <!-- ... -->
+            </div>    
+        </div>
+        <div class="main-right">
+            <!-- Bagian Kanan -->
+            <!-- ... -->
+        </div>
+    </div>
+
+    <script>
+
+        function toggleInput() {
+            var input = document.getElementById("feelingInput");
+            input.style.display = "block";
+            input.focus();
+        }
+    </script>
+</body>
+</html>
